@@ -1,0 +1,37 @@
+{
+  "name": "@chialab/storybook-prebuilt",
+  "type": "module",
+  "version": "6.4.0",
+  "description": "A prebuilt storybook manager with optimised chunks.",
+  "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
+  "license": "MIT",
+  "scripts": {
+    "build": "rna build",
+    "lint": "eslint 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chialab/storybook-prebuilt"
+  },
+  "devDependencies": {
+    "@chialab/dna": "^3.4.6",
+    "@chialab/eslint-config": "^2.2.0",
+    "@chialab/rna": "^0.10.0",
+    "@chialab/rna-bundler": "^0.10.6",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-a11y": "next",
+    "@storybook/addon-docs": "next",
+    "@storybook/addon-essentials": "next",
+    "@storybook/core-client": "next",
+    "@storybook/web-components": "next",
+    "eslint": "^7.19.0",
+    "lit-html": "^1.4.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.0"
+  },
+  "dependencies": {
+    "indent.js": "^0.3.5"
+  }
+}
