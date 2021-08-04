@@ -2,15 +2,15 @@
 
 ## Why
 
-Storybook is a fantastic tool used by thousand of developers. The project is composed by a lot of modules and it covers all the developer experience, from the webpack-based bundler setup to visual debugging helpers. In order to mantein both its stability and flexibility, the growth of complexity  its inevitable. This reflects to heavy node modules folders and long ci build times.
+[Storybook](https://storybook.js.org/) is a fantastic tool used by thousand of developers. The project is composed by a lot of modules and it covers all the developer experience, from the webpack-based bundler setup to visual debugging helpers. In order to mantein both its stability and flexibility, the growth of complexity was inevitable. This reflects to large `node_modules` folders and long CI build times.
 
-The scope of this project is to provide a not-so-opinioneted build of the Storybook manager (its client part and common addons) in order to simplify the dependencies tree and to allow developers to use tools such as esbuild to serve and bundle theirs stories.
+The scope of this project is to provide a not-so-opinioneted build of the Storybook manager (its client part and common addons) in order to simplify the dependencies tree and to allow developers to use tools such as [esbuild](https://esbuild.github.io/) to serve and bundle theirs stories.
 
 ## How it works
 
-Core and addon Storybook modules are downloaded as dev dependencies, bundled, optimized and resistribuited as single package.
+Core and addon Storybook modules are downloaded as dev dependencies, bundled, optimized and redistribuited as single package.
 
-The setup is based on RNA, a toolchain based on esbuild and Web Dev Server. The build uses multiple entrypoints and code splitting, so each module of the bundle has its own entrypoint that shares common chunks with the others. Preserving single entrypoints enables the interoperability with other addons that the developer may want to install and use in their instance. For example, Storybook modules can be aliased to their bundled version:
+The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based on esbuild and Web Dev Server. The build uses multiple entrypoints and code splitting, so each module of the bundle has its own entrypoint that shares common chunks with the others. Preserving single entrypoints enables the interoperability with other addons that the developer may want to install and use in their instance. For example, Storybook modules can be aliased to their bundled version:
 
 ```json
 {
