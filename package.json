@@ -5,6 +5,7 @@
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
+  "types": "./static/templates.d.ts",
   "exports": {
     "./addons": "./dist/addons.js",
     "./api": "./dist/api.js",
@@ -22,7 +23,10 @@
     "./essentials": "./dist/essentials.js",
     "./essentials/register": "./dist/essentials.register.js",
     "./web-components": "./dist/web-components.js",
-    "./dna": "./dist/dna.js"
+    "./dna": "./dist/dna.js",
+    ".": {
+      "default": "./static/templates.js"
+    }
   },
   "scripts": {
     "build": "rna build",
@@ -32,6 +36,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/chialab/storybook-prebuilt"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@chialab/dna": "^3.4.6",
@@ -44,15 +51,12 @@
     "@storybook/addon-essentials": "next",
     "@storybook/core-client": "next",
     "@storybook/web-components": "next",
-    "ident": "^1.0.1",
+    "indent.js": "^0.3.5",
     "eslint": "^7.19.0",
     "lit-html": "^1.4.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.0"
-  },
-  "dependencies": {
-    "indent.js": "^0.3.5"
   }
 }

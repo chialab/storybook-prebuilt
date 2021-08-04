@@ -5839,11 +5839,6 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   dependencies:
     postcss "^7.0.14"
 
-ident@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/ident/-/ident-1.0.1.tgz#8c0eadc0b2444b7f6966f03791636f62db2f1a66"
-  integrity sha1-jA6twLJES39pZvA3kWNvYtsvGmY=
-
 ieee754@^1.1.4:
   version "1.2.1"
   resolved "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
