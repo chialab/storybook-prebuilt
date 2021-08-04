@@ -5,8 +5,28 @@
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
+  "exports": {
+    "./addons": "./dist/addons.js",
+    "./api": "./dist/api.js",
+    "./client-api": "./dist/client-api.js",
+    "./client-logger": "./dist/client-logger.js",
+    "./components": "./dist/components.js",
+    "./core-client": "./dist/core-client.js",
+    "./core-events": "./dist/core-events.js",
+    "./mdx": "./dist/mdx.js",
+    "./react": "./dist/react.js",
+    "./theming": "./dist/theming.js",
+    "./ui": "./dist/ui.js",
+    "./manager": "./dist/manager.js",
+    "./docs": "./dist/docs.js",
+    "./essentials": "./dist/essentials.js",
+    "./essentials/register": "./dist/essentials.register.js",
+    "./web-components": "./dist/web-components.js",
+    "./dna": "./dist/dna.js"
+  },
   "scripts": {
     "build": "rna build",
+    "update": "rimraf node_modules && yarn.lock && yarn",
     "lint": "eslint 'src/**/*.js'"
   },
   "repository": {
@@ -24,6 +44,7 @@
     "@storybook/addon-essentials": "next",
     "@storybook/core-client": "next",
     "@storybook/web-components": "next",
+    "ident": "^1.0.1",
     "eslint": "^7.19.0",
     "lit-html": "^1.4.1",
     "react": "^16.0.0",

@@ -1,6 +1,6 @@
 import { window } from '@chialab/dna';
 import { addons } from '@storybook/addons';
-import indent from 'indent.js';
+import { indent } from 'indent.js';
 
 /**
  * @param {*} value
