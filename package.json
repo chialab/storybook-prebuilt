@@ -48,8 +48,8 @@
   "devDependencies": {
     "@chialab/dna": "^3.4.6",
     "@chialab/eslint-config": "^2.2.0",
-    "@chialab/rna": "^0.10.0",
-    "@chialab/rna-bundler": "^0.10.6",
+    "@chialab/rna": "^0.11.0",
+    "@chialab/rna-bundler": "^0.11.0",
     "@mdx-js/react": "^1.6.22",
     "@storybook/addon-a11y": "next",
     "@storybook/addon-docs": "next",
