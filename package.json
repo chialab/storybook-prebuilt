@@ -1,7 +1,7 @@
 {
   "name": "@chialab/storybook-prebuilt",
   "type": "module",
-  "version": "6.4.0",
+  "version": "6.4.0-alpha.23",
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
@@ -31,12 +31,17 @@
   "scripts": {
     "build": "rna build",
     "update": "rimraf node_modules && yarn.lock && yarn",
+    "prepack": "rna build",
     "lint": "eslint 'src/**/*.js'"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/chialab/storybook-prebuilt"
   },
+  "files": [
+    "dist",
+    "static"
+  ],
   "dependencies": {
     "lodash": "^4.17.21"
   },
