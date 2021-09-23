@@ -25,6 +25,7 @@ The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based o
     "@storybook/react": "@chialab/storybook-prebuilt/react",
     "@storybook/theming": "@chialab/storybook-prebuilt/theming",
     "@storybook/ui": "@chialab/storybook-prebuilt/ui",
+    "@storybook/preview-web": "@chialab/storybook-prebuilt/preview-web",
     "@storybook/manager": "@chialab/storybook-prebuilt/manager",
     "@storybook/docs": "@chialab/storybook-prebuilt/docs",
     "@storybook/essentials": "@chialab/storybook-prebuilt/essentials",
@@ -101,4 +102,4 @@ Steps to follow to release a new build:
 
 ## License
 
-Storybook Prebuilt is released under the [MIT](https://github.com/chialab/storybook-prebuilt/blob/master/LICENSE) license.
+Storybook Prebuilt is released under the [MIT](https://github.com/chialab/storybook-prebuilt/blob/main/LICENSE) license.
