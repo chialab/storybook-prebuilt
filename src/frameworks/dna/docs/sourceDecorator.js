@@ -1,4 +1,4 @@
-import { window } from '@chialab/dna';
+import { window, customElements } from '@chialab/dna';
 import { addons } from '@storybook/addons';
 import { indent } from 'indent.js';
 
@@ -91,7 +91,8 @@ function vnodeToNode(vnode) {
     }
 
     const hyperObject = /** @type {any} */ (vnode);
-    const tag = hyperObject.tag || (hyperObject.Component && hyperObject.Component.prototype.is);
+    const is = (hyperObject.Component && hyperObject.Component.prototype.is);
+    const tag = hyperObject.tag || (is ? customElements.tagNames[is] : undefined);
     const properties = hyperObject.properties || {};
     const attrs = Object.keys(properties).map((prop) => {
         let value = properties[prop];
