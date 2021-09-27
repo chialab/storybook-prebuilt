@@ -28,13 +28,15 @@ const config = {
                 './src/addons/docs/docs.js',
                 './src/addons/essentials/essentials.js',
                 './src/addons/essentials/essentials.register.js',
+                './src/addons/storybook-design-token/storybook-design-token.js',
+                './src/addons/storybook-design-token/storybook-design-token.register.js',
                 './src/frameworks/web-components/web-components.js',
                 './src/frameworks/dna/dna.js',
             ],
             alias: {
+                'fs': false,
                 'path': false,
                 'core-js': false,
-                '@storybook/core/client': '@storybook/core-client',
                 'global': resolve(ROOT, './src/global.js'),
                 'react': resolve(ROOT, './src/react.js'),
                 'react-is': resolve(ROOT, './src/react.js'),
@@ -43,6 +45,7 @@ const config = {
                 '@storybook/api': resolve(ROOT, './src/api.js'),
                 '@storybook/addons': resolve(ROOT, './src/addons.js'),
                 '@storybook/core-events': resolve(ROOT, './src/core-events.js'),
+                '@storybook/core/client': resolve(ROOT, './src/core-client.js'),
                 '@storybook/core-client': resolve(ROOT, './src/core-client.js'),
                 '@storybook/client-logger': resolve(ROOT, './src/client-logger.js'),
                 '@storybook/client-api': resolve(ROOT, './src/client-api.js'),
@@ -50,6 +53,7 @@ const config = {
                 '@storybook/ui': resolve(ROOT, './src/ui.js'),
                 '@storybook/preview-web': resolve(ROOT, './src/preview-web.js'),
                 '@storybook/theming': resolve(ROOT, './src/theming.js'),
+                '@storybook/addon-docs/blocks': resolve(ROOT, './src/addons/docs/docs.js'),
                 '@storybook/addon-docs': resolve(ROOT, './src/addons/docs/docs.js'),
                 '@storybook/web-components': resolve(ROOT, './src/frameworks/web-components/web-components.js'),
             },
@@ -66,7 +70,7 @@ const config = {
     chunkNames: '[hash]',
     bundle: true,
     minify: true,
-    sourcemap: false,
+    sourcemap: true,
 };
 
 export default config;

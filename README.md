@@ -31,6 +31,8 @@ The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based o
     "@storybook/essentials": "@chialab/storybook-prebuilt/essentials",
     "@storybook/essentials/register": "@chialab/storybook-prebuilt/essentials/register",
     "@storybook/web-components": "@chialab/storybook-prebuilt/web-components",
+    "storybook-design-token/register": "@chialab/storybook-prebuilt/storybook-design-token/register",
+    "storybook-design-token": "@chialab/storybook-prebuilt/storybook-design-token",
 }
 ```
 
@@ -40,6 +42,7 @@ Since each entrypoint exposes the original module interface, third party addons 
 
 * Manager with Docs addon
 * Essentials addons
+* Design Token addon
 * Web Components framework
 * DNA framework
 
