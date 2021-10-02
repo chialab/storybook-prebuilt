@@ -1094,14 +1094,12 @@
   resolved "https://registry.npmjs.org/@base2/pretty-print-object/-/pretty-print-object-1.0.0.tgz#860ce718b0b73f4009e153541faff2cb6b85d047"
   integrity sha512-4Th98KlMHr5+JkxfcoDT//6vY8vM+iSPrLNpHhRyLx2CFYi8e2RfqPLdpbnpo0Q5lQC5hNB79yes07zb02fvCw==
 
-"@chialab/cjs-to-esm@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/cjs-to-esm/-/cjs-to-esm-0.12.2.tgz#288e10946a0b92c5531db166d74d43c894d58ca0"
-  integrity sha512-QOC5wDGn+NEg+k7fwLu8xwPQiRuj/IF54qPut4XqvtolXQCjBPw15fQu+g+cqt2OCZwAlh4s4+EQeoznyUF8YQ==
+"@chialab/cjs-to-esm@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/cjs-to-esm/-/cjs-to-esm-0.12.3.tgz#fbc1ca6bf5c543d7386f21b126ae27121866f068"
+  integrity sha512-/k6EkZlJ47kqGBUQ/sJ4NP2x8QlaieNtpg7kh6m/usASfaS/7rBMJcRW1jO21iAQTxCPTJkj8RyD0vugAjLWdA==
   dependencies:
-    "@chialab/estransform" "^0.12.2"
-    cjs-module-lexer "^1.2.2"
-    es-module-lexer "^0.7.1"
+    "@chialab/estransform" "^0.12.3"
 
 "@chialab/dna@^3.4.6":
   version "3.11.0"
@@ -1117,13 +1115,13 @@
   dependencies:
     esbuild "^0.13.0"
 
-"@chialab/esbuild-plugin-alias@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-alias/-/esbuild-plugin-alias-0.12.2.tgz#0e706e4b1b668c5f90d70b6ac6818fab6e348d9b"
-  integrity sha512-REy1E6RhadVM+0zYl8zWCIZ8o1HXEQA3HojGzdUD5X2hNN31ZzRgC9oYKp8a8g6TP9ucY/3Syl3Gcmo9fBVXqQ==
+"@chialab/esbuild-plugin-alias@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-alias/-/esbuild-plugin-alias-0.12.3.tgz#2c6361ba316fbdc91750122bee903759488a5063"
+  integrity sha512-rH2LO/WlHC5PlYIkCS8FbD8ojsCq9C1JLA9XTQ4UHQR1L3mrsvyESIvoQ6+a+UY0wz+L2EFwOCvJ5seB39N6Dw==
   dependencies:
     "@chialab/esbuild-helpers" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/estransform" "^0.12.3"
     "@chialab/node-resolve" "^0.12.2"
     pkg-up "^3.1.0"
 
@@ -1139,15 +1137,15 @@
   dependencies:
     pkg-up "^3.1.0"
 
-"@chialab/esbuild-plugin-commonjs@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-commonjs/-/esbuild-plugin-commonjs-0.12.2.tgz#749fe0b17cf70841b053989d54825155e4735e67"
-  integrity sha512-hwejjtO9P4yK5+ZcT3H5xfOmFOx3SPuqIqJBHOe2w3kmpCvWHbflqrfQuDIBuy00cf0U8NKQnYr4BfgSxQ1EJA==
+"@chialab/esbuild-plugin-commonjs@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-commonjs/-/esbuild-plugin-commonjs-0.12.3.tgz#94f5c87713cb489000e95ac7eff32355b4bda3ec"
+  integrity sha512-XqJvXEfqBTaYDhs6wWOBTokRazCheGIxmJYFVspt31i8Jdmr8vSAYM4lFg/fIsrvwux40dd8HccRxgRWghS7Og==
   dependencies:
-    "@chialab/cjs-to-esm" "^0.12.2"
+    "@chialab/cjs-to-esm" "^0.12.3"
     "@chialab/esbuild-helpers" "^0.12.2"
-    "@chialab/esbuild-plugin-transform" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/esbuild-plugin-transform" "^0.12.3"
+    "@chialab/estransform" "^0.12.3"
 
 "@chialab/esbuild-plugin-define-this@^0.12.2":
   version "0.12.2"
@@ -1172,54 +1170,54 @@
   resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-env/-/esbuild-plugin-env-0.12.2.tgz#4229aea160cf8053c6bb8e956263716ee4be4f32"
   integrity sha512-Vz/9XlsuET9scml4ZHcY5Qxi4EKyJW2SWHwZn+O+4QpgVh+fow83i+6xfSwacRXM6nX9DQt+kZuUo5pkey6n5Q==
 
-"@chialab/esbuild-plugin-jsx-import@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-jsx-import/-/esbuild-plugin-jsx-import-0.12.2.tgz#e269d1d7d0451ba78a97b8f3d6b2c92320c6358d"
-  integrity sha512-iGqN7Y++8enVN63sUy8jvhatXoduIfUP28CXXRtCeZc7de1RGMfXQhOp4j4wTYPtmjfzFNYtViQpGlZAWEmFLA==
+"@chialab/esbuild-plugin-jsx-import@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-jsx-import/-/esbuild-plugin-jsx-import-0.12.3.tgz#f1a929eb39f2835bbe50335b800b5b1b3ba345c4"
+  integrity sha512-eibAiOqz+3K3nw5zYPlwH7jxmKtUKp+l9Z2vXprexeFOsatgb5hch8ziw5b41+BJAyU1UUmDiqnVpeU/gXnqlg==
   dependencies:
     "@chialab/esbuild-helpers" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/estransform" "^0.12.3"
 
-"@chialab/esbuild-plugin-meta-url@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-meta-url/-/esbuild-plugin-meta-url-0.12.2.tgz#5908b35b99fc1c42594f1cc651acf036d68823b9"
-  integrity sha512-bd5YMkV0s88Exr4T/N8bSC/N8VWSZUhqgifWDUUeI3SkoS5r+pY7Ki0kqU5g2U+LVHUyP4uC6LEMblEhrcBv0A==
+"@chialab/esbuild-plugin-meta-url@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-meta-url/-/esbuild-plugin-meta-url-0.12.3.tgz#486ee80e41c0df9dda9b4721a80135b95e6cc669"
+  integrity sha512-OOizNIPbkT1+gEaSCCU8LHqsogVM4BYjo39w+/FGFhiMHkQ1Ih56fFF5dP0L65BxBnR4wlADshwMx7enjJPdbQ==
   dependencies:
     "@chialab/esbuild-helpers" "^0.12.2"
     "@chialab/esbuild-plugin-emit" "^0.12.2"
-    "@chialab/esbuild-plugin-transform" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/esbuild-plugin-transform" "^0.12.3"
+    "@chialab/estransform" "^0.12.3"
     "@chialab/node-resolve" "^0.12.2"
     esbuild "^0.13.0"
 
-"@chialab/esbuild-plugin-transform@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-transform/-/esbuild-plugin-transform-0.12.2.tgz#8212c4e47f39cff39f3524a6df1b92274301a385"
-  integrity sha512-du4Ac0Sr03bvz7OaJbQVO6gQ9i8fll4o190dDQSCzfHA2sVLqTP1fplp5VHz7sp76GUXLt9KpzfiKYNAG5MQ8Q==
+"@chialab/esbuild-plugin-transform@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-transform/-/esbuild-plugin-transform-0.12.3.tgz#364ce0445e1dbc7a7549446b405aa6e65a1ce778"
+  integrity sha512-ShfOQogTC1HUIakX2itBLlR61P4yK4Dbnaq4JNLCdb2SX9Tuj9iSkZqygL7b5U+R8jP6au5ixnFNbMdeAcivOg==
   dependencies:
     "@chialab/esbuild-helpers" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/estransform" "^0.12.3"
     esbuild "^0.13.0"
 
-"@chialab/esbuild-plugin-webpack-include@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-webpack-include/-/esbuild-plugin-webpack-include-0.12.2.tgz#1193b895a0facbd538f47a67c9142d63ca6ee853"
-  integrity sha512-UjJaPVj/yyJIN6ZaFN4lOTeAWhdSsHYinjaVO86JTFG2RmoxQCpZeyvZfCCF1Z2qZ3l+ChFqZSytHHsAP+bUww==
+"@chialab/esbuild-plugin-unwebpack@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-unwebpack/-/esbuild-plugin-unwebpack-0.12.3.tgz#31ba42c65c652eeb0d3c91f0dc45dbeb0e3de46b"
+  integrity sha512-azPGUcA31VoxEuW7glGVyQrxqHON23qXO8+R67ZW0NIMVusWF+KfHFdC6bBrAbmp4GBSewOcMIdgFtKXVbtmZw==
   dependencies:
-    "@chialab/esbuild-plugin-transform" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/esbuild-plugin-transform" "^0.12.3"
+    "@chialab/estransform" "^0.12.3"
     fast-glob "^3.2.5"
 
-"@chialab/esbuild-plugin-worker@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-worker/-/esbuild-plugin-worker-0.12.2.tgz#cfd31262ba7a237d18fd3a6df7dc81b3bc68c64a"
-  integrity sha512-9h81YwyYvXr+Ttq/Zyd8bbM1SD0VOlu76AMfEs9G0f6Y8m12TIr9NLtrLTMLx8rZz5FQ3KUwXldKo71NrVtL8Q==
+"@chialab/esbuild-plugin-worker@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/esbuild-plugin-worker/-/esbuild-plugin-worker-0.12.3.tgz#f20d7b62e1deeff921142cae8eefb281d350e84c"
+  integrity sha512-YOc+9y/lAwHqLxhRfve+r0T3IUE6BrxVG67shEmTN3KLOpDZJ6Moqt97MmznzAqNnI3sIBPVfumxSO1D7ZYq4A==
   dependencies:
     "@chialab/esbuild-helpers" "^0.12.2"
     "@chialab/esbuild-plugin-emit" "^0.12.2"
-    "@chialab/esbuild-plugin-meta-url" "^0.12.2"
-    "@chialab/esbuild-plugin-transform" "^0.12.2"
-    "@chialab/estransform" "^0.12.2"
+    "@chialab/esbuild-plugin-meta-url" "^0.12.3"
+    "@chialab/esbuild-plugin-transform" "^0.12.3"
+    "@chialab/estransform" "^0.12.3"
     "@chialab/node-resolve" "^0.12.2"
 
 "@chialab/eslint-config@^2.2.0":
@@ -1239,15 +1237,17 @@
     eslint-plugin-lit-a11y "^1.0.1"
     eslint-plugin-mocha "^8.0.0"
 
-"@chialab/estransform@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/estransform/-/estransform-0.12.2.tgz#1f00fa29e7374a2a07bba98b546de44a0545b2e1"
-  integrity sha512-melu9h+bSjiU+x1aVCBEC1ypZF/8iUV3K+nhhPh9eleXiJX/L6fHwPNmY3CcJ8u+IWRuZADKoS2fBDa8kBFilQ==
+"@chialab/estransform@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/estransform/-/estransform-0.12.3.tgz#48c2641a3937485d341072eb65e64bac000008ee"
+  integrity sha512-unW2uP2UUd1kF/pvG5Grdi8nFodRNvZ1pK3moDo/7+aHZz30QoV3nzVdJPhE/eFVFyHfN5fzHFM3lGtnnbH6IQ==
   dependencies:
     "@parcel/source-map" "^2.0.0-rc.4"
     acorn "^8.4.1"
     acorn-jsx "^5.3.2"
     acorn-walk "^8.1.1"
+    cjs-module-lexer "^1.2.2"
+    es-module-lexer "^0.7.1"
     esbuild "^0.13.0"
     escodegen "^2.0.0"
     magic-string "^0.25.7"
@@ -1261,24 +1261,24 @@
     is-core-module "^2.5.0"
 
 "@chialab/rna-bundler@^0.12.0":
-  version "0.12.2"
-  resolved "https://registry.npmjs.org/@chialab/rna-bundler/-/rna-bundler-0.12.2.tgz#89bce2d66617c5e6a3e31bfcdd40aa84ef7f7dbb"
-  integrity sha512-sFbnAR4SXhcIqaFztg5RjMCZ0HW+vHGxptwzM+VR1Vd5EQOyauBTr2/3/+Ymx1Meu1RPYxUgQKlc0qxd96KCSw==
+  version "0.12.3"
+  resolved "https://registry.npmjs.org/@chialab/rna-bundler/-/rna-bundler-0.12.3.tgz#32aa09b37b876c0dc2e51ab706aa3271ec942b61"
+  integrity sha512-Wo/7AvKPbHUSgCNThbyrTJgwELawQLhR3ZFLOmfGlZ7LKok2FbqaIIhPR/OcK+aA0FMH8nEveBQXoKCIDFXZBg==
   dependencies:
     "@chialab/esbuild-helpers" "^0.12.2"
-    "@chialab/esbuild-plugin-alias" "^0.12.2"
+    "@chialab/esbuild-plugin-alias" "^0.12.3"
     "@chialab/esbuild-plugin-any-file" "^0.12.2"
     "@chialab/esbuild-plugin-bundle-dependencies" "^0.12.2"
-    "@chialab/esbuild-plugin-commonjs" "^0.12.2"
+    "@chialab/esbuild-plugin-commonjs" "^0.12.3"
     "@chialab/esbuild-plugin-define-this" "^0.12.2"
     "@chialab/esbuild-plugin-dependencies" "^0.12.2"
     "@chialab/esbuild-plugin-emit" "^0.12.2"
     "@chialab/esbuild-plugin-env" "^0.12.2"
-    "@chialab/esbuild-plugin-jsx-import" "^0.12.2"
-    "@chialab/esbuild-plugin-meta-url" "^0.12.2"
-    "@chialab/esbuild-plugin-transform" "^0.12.2"
-    "@chialab/esbuild-plugin-webpack-include" "^0.12.2"
-    "@chialab/esbuild-plugin-worker" "^0.12.2"
+    "@chialab/esbuild-plugin-jsx-import" "^0.12.3"
+    "@chialab/esbuild-plugin-meta-url" "^0.12.3"
+    "@chialab/esbuild-plugin-transform" "^0.12.3"
+    "@chialab/esbuild-plugin-unwebpack" "^0.12.3"
+    "@chialab/esbuild-plugin-worker" "^0.12.3"
     "@chialab/rna-config-loader" "^0.12.2"
     "@chialab/rna-logger" "^0.12.2"
     esbuild "^0.13.0"
