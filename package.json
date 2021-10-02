@@ -42,7 +42,7 @@
   },
   "files": [
     "dist",
-    "static"
+    "helpers"
   ],
   "dependencies": {
     "fast-glob": "^3.2.7"
