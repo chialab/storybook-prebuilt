@@ -1,6 +1,5 @@
 import { window, customElements } from '@chialab/dna';
 import { addons } from '@storybook/addons';
-import { indent } from 'indent.js';
 
 /**
  * @param {*} value
@@ -72,6 +71,51 @@ const voidElements = [
     'wbr',
 ];
 
+function getIndent(level) {
+    let result = '', i = level * 4;
+    while (i--) {
+        result += ' ';
+    }
+
+    return result;
+}
+
+function format(html) {
+    const tokens = html.trim().split(/</);
+
+    let result = '',
+        indentLevel = 0;
+    for (let i = 0, l = tokens.length; i < l; i++) {
+        const parts = tokens[i].split(/>/);
+        if (parts.length === 2) {
+            if (tokens[i][0] === '/') {
+                indentLevel--;
+            }
+            result += getIndent(indentLevel);
+            if (tokens[i][0] !== '/') {
+                indentLevel++;
+            }
+
+            if (i > 0) {
+                result += '<';
+            }
+
+            result += `${parts[0].trim()}>\n`;
+            if (parts[1].trim() !== '') {
+                result += `${getIndent(indentLevel) + parts[1].trim().replace(/\s+/g, ' ')}\n`;
+            }
+
+            if (parts[0].match(new RegExp(`^(${voidElements.join('|')})`))) {
+                indentLevel--;
+            }
+        } else {
+            result += `${getIndent(indentLevel) + parts[0]}\n`;
+        }
+    }
+
+    return result;
+}
+
 /**
  * @param {import('@chialab/dna').Template} vnode
  * @return {string}
@@ -106,10 +150,10 @@ function vnodeToNode(vnode) {
     }).join(' ');
 
     if (voidElements.indexOf(tag) !== -1) {
-        return `<${tag} ${attrs} />`;
+        return `<${tag}${attrs ? ` ${attrs}` : ''}>`;
     }
 
-    return `<${tag} ${attrs}>${(hyperObject.children || []).map(vnodeToNode).join('')}</${tag}>`;
+    return `<${tag}${attrs ? ` ${attrs}` : ''}>${(hyperObject.children || []).map(vnodeToNode).join('')}</${tag}>`;
 }
 
 /**
@@ -119,7 +163,7 @@ function vnodeToNode(vnode) {
 export function sourceDecorator(storyFn, context) {
     const vnode = /** @type {import('@chialab/dna').Template} */ (storyFn());
     const source = vnodeToNode(vnode);
-    const code = indent.html(source);
+    const code = format(source);
 
     context.parameters.storySource.source = code;
 

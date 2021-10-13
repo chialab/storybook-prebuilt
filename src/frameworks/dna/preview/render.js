@@ -1,8 +1,6 @@
-import global from 'global';
-import { html, customElements, DOM, render } from '@chialab/dna';
+import { document, Node, html, customElements, DOM, render } from '@chialab/dna';
 import { simulatePageLoad, simulateDOMContentLoaded } from '@storybook/preview-web';
 
-const { document, Node } = global;
 const rootElement = document.getElementById('root');
 
 export default function renderMain({

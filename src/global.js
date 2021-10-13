@@ -13,6 +13,7 @@ const globalVar =
 
 
 globalVar.module = {};
+globalVar.FEATURES = {};
 
 export { globalVar as window };
 export default globalThis;

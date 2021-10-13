@@ -60,7 +60,6 @@
     "@storybook/preview-web": "^6.4.0-beta.0",
     "@storybook/web-components": "^6.4.0-beta.0",
     "eslint": "^7.19.0",
-    "indent.js": "^0.3.5",
     "lit-html": "^1.4.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
