@@ -89,7 +89,7 @@ function format(html) {
         const parts = tokens[i].split(/>/);
         if (parts.length === 2) {
             if (tokens[i][0] === '/') {
-                indentLevel--;
+                indentLevel = Math.max(indentLevel - 1, 0);
             }
             result += getIndent(indentLevel);
             if (tokens[i][0] !== '/') {
@@ -106,7 +106,7 @@ function format(html) {
             }
 
             if (parts[0].match(new RegExp(`^(${voidElements.join('|')})`))) {
-                indentLevel--;
+                indentLevel = Math.max(indentLevel - 1, 0);
             }
         } else {
             result += `${getIndent(indentLevel) + parts[0]}\n`;
