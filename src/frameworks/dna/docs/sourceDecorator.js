@@ -71,61 +71,20 @@ const voidElements = [
     'wbr',
 ];
 
-function getIndent(level) {
-    let result = '', i = level * 4;
-    while (i--) {
-        result += ' ';
-    }
-
-    return result;
-}
-
-function format(html) {
-    const tokens = html.trim().split(/</);
-
-    let result = '',
-        indentLevel = 0;
-    for (let i = 0, l = tokens.length; i < l; i++) {
-        const parts = tokens[i].split(/>/);
-        if (parts.length === 2) {
-            if (tokens[i][0] === '/') {
-                indentLevel = Math.max(indentLevel - 1, 0);
-            }
-            result += getIndent(indentLevel);
-            if (tokens[i][0] !== '/') {
-                indentLevel++;
-            }
-
-            if (i > 0) {
-                result += '<';
-            }
-
-            result += `${parts[0].trim()}>\n`;
-            if (parts[1].trim() !== '') {
-                result += `${getIndent(indentLevel) + parts[1].trim().replace(/\s+/g, ' ')}\n`;
-            }
-
-            if (parts[0].match(new RegExp(`^(${voidElements.join('|')})`))) {
-                indentLevel = Math.max(indentLevel - 1, 0);
-            }
-        } else {
-            result += `${getIndent(indentLevel) + parts[0]}\n`;
-        }
-    }
-
-    return result;
+function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
 }
 
 /**
  * @param {import('@chialab/dna').Template} vnode
  * @return {string}
  */
-function vnodeToNode(vnode) {
+function vnodeToString(vnode, indent = 0) {
     if (typeof vnode !== 'object') {
         return vnode.toString();
     }
     if (Array.isArray(vnode)) {
-        return vnode.map(vnodeToNode).join('');
+        return vnode.map(vnodeToString).join('');
     }
     if (vnode instanceof window.Element) {
         return vnode.outerHTML;
@@ -146,14 +105,27 @@ function vnodeToNode(vnode) {
         if (isArray(value)) {
             value = '[...]';
         }
-        return `${prop}="${value}"`;
-    }).join(' ');
+        if (value == null) {
+            return false;
+        }
+        if (value === true) {
+            return prop;
+        }
+        return `${prop}="${escapeHtml(`${value}`)}"`;
+    }).filter(Boolean).join(' ');
 
+    const prefix = ''.padStart(indent * 4, ' ');
     if (voidElements.indexOf(tag) !== -1) {
-        return `<${tag}${attrs ? ` ${attrs}` : ''}>`;
+        return `${prefix}<${tag}${attrs ? ` ${attrs}` : ''} />`;
     }
 
-    return `<${tag}${attrs ? ` ${attrs}` : ''}>${(hyperObject.children || []).map(vnodeToNode).join('')}</${tag}>`;
+    if (!hyperObject.children || !hyperObject.children.length) {
+        return `${prefix}<${tag}${attrs ? ` ${attrs}` : ''}></${tag}>`;
+    }
+
+    return `${prefix}<${tag}${attrs ? ` ${attrs}` : ''}>
+${(hyperObject.children || []).map((child) => vnodeToString(child, indent + 1)).join('\n')}
+</${tag}>`;
 }
 
 /**
@@ -162,14 +134,13 @@ function vnodeToNode(vnode) {
  */
 export function sourceDecorator(storyFn, context) {
     const vnode = /** @type {import('@chialab/dna').Template} */ (storyFn());
-    const source = vnodeToNode(vnode);
-    const code = format(source);
+    const source = vnodeToString(vnode);
 
-    context.parameters.storySource.source = code;
+    context.parameters.storySource.source = source;
 
     try {
         /* @ts-ignore */
-        addons.getChannel().emit('storybook/docs/snippet-rendered', context.id, code);
+        addons.getChannel().emit('storybook/docs/snippet-rendered', context.id, source);
     } catch {
         //
     }
