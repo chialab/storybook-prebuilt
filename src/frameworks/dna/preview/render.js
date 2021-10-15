@@ -1,37 +1,35 @@
-import { document, Node, html, customElements, DOM, render } from '@chialab/dna';
+import { Node, html, customElements, DOM, render } from '@chialab/dna';
 import { simulatePageLoad, simulateDOMContentLoaded } from '@storybook/preview-web';
 
-const rootElement = document.getElementById('root');
-
-export default function renderMain({
+export function renderToDOM({
     storyFn,
     kind,
     name,
     showMain,
     showError,
-    forceRender,
-}) {
+    forceRemount,
+}, domElement) {
     const element = storyFn();
 
     showMain();
 
     try {
         if (typeof element === 'string') {
-            rootElement.innerHTML = element;
-            customElements.upgrade(rootElement);
-            simulatePageLoad(rootElement);
+            domElement.innerHTML = element;
+            customElements.upgrade(domElement);
+            simulatePageLoad(domElement);
         } else if (element instanceof Node) {
             // Don't re-mount the element if it didn't change and neither did the story
-            if (rootElement.firstChild === element && forceRender === true) {
+            if (domElement.firstChild === element && forceRemount === true) {
                 return;
             }
 
-            rootElement.innerHTML = '';
-            DOM.appendChild(rootElement, element);
+            domElement.innerHTML = '';
+            DOM.appendChild(domElement, element);
             simulateDOMContentLoaded();
         } else {
-            render(html`<div key=${name}>${element}</div>`, rootElement);
-            simulatePageLoad(rootElement);
+            render(html`<div key=${name}>${element}</div>`, domElement);
+            simulatePageLoad(domElement);
         }
     } catch (err) {
         showError({

@@ -1,9 +1,9 @@
 import { start } from '@storybook/core-client';
 import { window } from '@chialab/dna';
-import render from './render.js';
+import { renderToDOM } from './render.js';
 
 const framework = window.STORYBOOK_ENV = 'dna';
-const api = start(render);
+const api = start(renderToDOM);
 
 export const storiesOf = (kind, m) => api.clientApi.storiesOf(kind, m).addParameters({
     framework,

@@ -63,19 +63,22 @@ export async function createDesignTokensFile(root, cssFiles) {
  * @param {string} type
  */
 export function createBuildMap(type) {
-    const map = {
+    const modules = {
         'react': '@chialab/storybook-prebuilt/react',
         'react-dom': '@chialab/storybook-prebuilt/react',
         'react-is': '@chialab/storybook-prebuilt/react',
         '@mdx-js/react': '@chialab/storybook-prebuilt/mdx',
         '@storybook/manager': '@chialab/storybook-prebuilt/manager',
         [`@storybook/${type}`]: `@chialab/storybook-prebuilt/${type}`,
+        [`@storybook/${type}/preset.js`]: `@chialab/storybook-prebuilt/${type}/preset.js`,
         '@storybook/api': '@chialab/storybook-prebuilt/api',
         '@storybook/addons': '@chialab/storybook-prebuilt/addons',
+        '@storybook/channel-postmessage': '@chialab/storybook-prebuilt/channel-postmessage',
         '@storybook/client-api': '@chialab/storybook-prebuilt/client-api',
         '@storybook/client-logger': '@chialab/storybook-prebuilt/client-logger',
-        '@storybook/components': '@chialab/storybook-prebuilt/components',
         '@storybook/core-events': '@chialab/storybook-prebuilt/core-events',
+        '@storybook/preview-web': '@chialab/storybook-prebuilt/preview-web',
+        '@storybook/components': '@chialab/storybook-prebuilt/components',
         '@storybook/theming': '@chialab/storybook-prebuilt/theming',
         '@storybook/addon-docs': '@chialab/storybook-prebuilt/docs',
         '@storybook/addon-docs/blocks': '@chialab/storybook-prebuilt/docs',
@@ -96,8 +99,7 @@ export function createBuildMap(type) {
 
     return {
         manager: '@storybook/manager',
-        map,
-        modules: Object.keys(map),
+        modules,
         resolutions,
     };
 }

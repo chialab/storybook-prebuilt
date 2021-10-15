@@ -9,11 +9,13 @@
   "exports": {
     "./addons": "./dist/addons.js",
     "./api": "./dist/api.js",
+    "./components": "./dist/components.js",
+    "./channel-postmessage": "./dist/channel-postmessage.js",
+    "./core-events": "./dist/core-events.js",
+    "./core-client": "./dist/core-client.js",
     "./client-api": "./dist/client-api.js",
     "./client-logger": "./dist/client-logger.js",
-    "./components": "./dist/components.js",
-    "./core-client": "./dist/core-client.js",
-    "./core-events": "./dist/core-events.js",
+    "./preview-web": "./dist/preview-web.js",
     "./mdx": "./dist/mdx.js",
     "./react": "./dist/react.js",
     "./theming": "./dist/theming.js",
@@ -25,7 +27,9 @@
     "./storybook-design-token": "./dist/storybook-design-token.js",
     "./storybook-design-token/register": "./dist/storybook-design-token.register.js",
     "./web-components": "./dist/web-components.js",
+    "./web-components/preset.js": "./dist/web-components-preset.js",
     "./dna": "./dist/dna.js",
+    "./dna/preset.js": "./dist/dna-preset.js",
     ".": {
       "default": "./helpers/index.js"
     }
