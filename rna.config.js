@@ -73,7 +73,7 @@ const config = {
     platform: 'browser',
     chunkNames: '[hash]',
     bundle: true,
-    // minify: true,
+    minify: true,
     sourcemap: true,
 };
 
