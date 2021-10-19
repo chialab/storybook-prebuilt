@@ -1,5 +1,5 @@
-import { start } from '@storybook/core-client';
 import { window } from '@chialab/dna';
+import { start } from '../../../../node_modules/@storybook/core-client/dist/esm/index.js';
 import { renderToDOM } from './render.js';
 
 const framework = window.STORYBOOK_ENV = 'dna';

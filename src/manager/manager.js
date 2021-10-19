@@ -1,3 +1,3 @@
-import '@storybook/core-client/dist/esm/globals/polyfills.js';
-import '@storybook/core-client/dist/esm/manager/index.js';
-import '@storybook/addon-docs/dist/esm/register.js';
+import '../../node_modules/@storybook/core-client/dist/esm/globals/polyfills.js';
+import '../../node_modules/@storybook/core-client/dist/esm/manager/index.js';
+import '../../node_modules/@storybook/addon-docs/dist/esm/register.js';

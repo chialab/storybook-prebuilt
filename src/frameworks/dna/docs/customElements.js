@@ -1,5 +1,5 @@
-import { getCustomElements, isValidComponent, isValidMetaData } from '@storybook/web-components/dist/esm/client/customElements.js';
-import { logger } from '@storybook/client-logger';
+import { getCustomElements, isValidComponent, isValidMetaData } from '../../../../node_modules/@storybook/web-components/dist/esm/client/customElements.js';
+import { logger } from '../../../../node_modules/@storybook/client-logger/dist/esm/index.js';
 
 function mapData(data, category) {
     return data && data.filter((item) => !!item).reduce((acc, item) => {

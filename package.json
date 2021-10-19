@@ -9,21 +9,27 @@
   "exports": {
     "./addons": "./dist/addons.js",
     "./api": "./dist/api.js",
+    "./channels": "./dist/channels.js",
     "./components": "./dist/components.js",
     "./channel-postmessage": "./dist/channel-postmessage.js",
     "./core-events": "./dist/core-events.js",
     "./core-client": "./dist/core-client.js",
+    "./csf": "./dist/csf.js",
     "./client-api": "./dist/client-api.js",
     "./client-logger": "./dist/client-logger.js",
     "./preview-web": "./dist/preview-web.js",
     "./mdx": "./dist/mdx.js",
     "./react": "./dist/react.js",
+    "./router": "./dist/router.js",
+    "./semver": "./dist/semver.js",
+    "./store": "./dist/store.js",
     "./theming": "./dist/theming.js",
     "./ui": "./dist/ui.js",
     "./manager": "./dist/manager.js",
     "./docs": "./dist/docs.js",
     "./essentials": "./dist/essentials.js",
     "./essentials/register": "./dist/essentials.register.js",
+    "./storysource/register": "./dist/storysource.register.js",
     "./storybook-design-token": "./dist/storybook-design-token.js",
     "./storybook-design-token/register": "./dist/storybook-design-token.register.js",
     "./web-components": "./dist/web-components.js",
@@ -60,6 +66,7 @@
     "@storybook/addon-a11y": "^6.4.0-beta.0",
     "@storybook/addon-docs": "^6.4.0-beta.0",
     "@storybook/addon-essentials": "^6.4.0-beta.0",
+    "@storybook/addon-storysource": "^6.4.0-beta.0",
     "@storybook/core-client": "^6.4.0-beta.0",
     "@storybook/preview-web": "^6.4.0-beta.0",
     "@storybook/web-components": "^6.4.0-beta.0",
@@ -70,5 +77,10 @@
     "rimraf": "^3.0.2",
     "storybook-design-token": "^1.2.3",
     "typescript": "^4.3.0"
+  },
+  "resolutions": {
+    "@storybook/addons": "6.4.0-beta.13",
+    "@storybook/components": "6.4.0-beta.13",
+    "@storybook/theming": "6.4.0-beta.13"
   }
 }

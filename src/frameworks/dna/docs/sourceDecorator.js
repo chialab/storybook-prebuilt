@@ -1,5 +1,5 @@
 import { window, customElements } from '@chialab/dna';
-import { addons } from '@storybook/addons';
+import addons from '../../../../node_modules/@storybook/addons/dist/esm/public_api.js';
 
 /**
  * @param {*} value
@@ -79,7 +79,7 @@ function escapeHtml(str) {
  * @param {import('@chialab/dna').Template} vnode
  * @return {string}
  */
-function vnodeToString(vnode, indent = 0) {
+function vnodeToString(vnode) {
     if (typeof vnode !== 'object') {
         return vnode.toString();
     }
@@ -105,45 +105,54 @@ function vnodeToString(vnode, indent = 0) {
         if (isArray(value)) {
             value = '[...]';
         }
-        if (value == null) {
+        if (value == null || value === false) {
             return false;
         }
         if (value === true) {
             return prop;
         }
+
         return `${prop}="${escapeHtml(`${value}`)}"`;
     }).filter(Boolean).join(' ');
 
-    const prefix = ''.padStart(indent * 4, ' ');
     if (voidElements.indexOf(tag) !== -1) {
-        return `${prefix}<${tag}${attrs ? ` ${attrs}` : ''} />`;
+        return `<${tag}${attrs ? ` ${attrs}` : ''} />`;
     }
 
     if (!hyperObject.children || !hyperObject.children.length) {
-        return `${prefix}<${tag}${attrs ? ` ${attrs}` : ''}></${tag}>`;
+        return `<${tag}${attrs ? ` ${attrs}` : ''}></${tag}>`;
     }
 
-    return `${prefix}<${tag}${attrs ? ` ${attrs}` : ''}>
-${(hyperObject.children || []).map((child) => vnodeToString(child, indent + 1)).join('\n')}
+    const prefix = ''.padStart(4, ' ');
+    return `<${tag}${attrs ? ` ${attrs}` : ''}>
+${prefix}${(hyperObject.children || []).map((child) => vnodeToString(child).replace(/\n/g, `\n${prefix}`)).join(`\n${prefix}`)}
 </${tag}>`;
 }
 
 /**
- * @param {import('@storybook/addons').StoryFn} storyFn
+ * @param {import('@storybook/addons').StoryFn} Story
  * @param {import('@storybook/addons').StoryContext} context
  */
-export function sourceDecorator(storyFn, context) {
-    const vnode = /** @type {import('@chialab/dna').Template} */ (storyFn());
+export function sourceDecorator(Story, context) {
+    const channel = addons.getChannel();
+    const vnode = /** @type {import('@chialab/dna').Template} */ (Story());
     const source = vnodeToString(vnode);
 
-    context.parameters.storySource.source = source;
+    channel.emit('storybook/docs/snippet-rendered', context.id, source);
 
-    try {
-        /* @ts-ignore */
-        addons.getChannel().emit('storybook/docs/snippet-rendered', context.id, source);
-    } catch {
-        //
+    const storySource = context.parameters.storySource = context.parameters.storySource || {};
+    if (storySource.source === source) {
+        return vnode;
     }
+
+    storySource.source = source;
+    channel.emit('storyPrepared', {
+        id: context.id,
+        argTypes: context.argTypes,
+        args: context.args,
+        initialArgs: context.initialArgs,
+        parameters: context.parameters,
+    });
 
     return vnode;
 }
