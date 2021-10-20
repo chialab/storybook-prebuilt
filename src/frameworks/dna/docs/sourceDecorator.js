@@ -124,8 +124,28 @@ function vnodeToString(vnode) {
     }
 
     const prefix = ''.padStart(4, ' ');
+    const childContent = (hyperObject.children || [])
+        .reduce((acc, child) => {
+            if (typeof child !== 'object' || child instanceof window.Node) {
+                child = vnodeToString(child);
+            }
+
+            if (typeof child === 'string' &&
+                typeof acc[acc.length - 1] === 'string') {
+                acc[acc.length - 1] += child;
+            } else {
+                acc.push(child);
+            }
+
+            return acc;
+        }, [])
+        .map((child) =>
+            vnodeToString(child)
+                .replace(/\n/g, `\n${prefix}`)
+        )
+        .join(`\n${prefix}`);
     return `<${tag}${attrs ? ` ${attrs}` : ''}>
-${prefix}${(hyperObject.children || []).map((child) => vnodeToString(child).replace(/\n/g, `\n${prefix}`)).join(`\n${prefix}`)}
+${prefix}${childContent}
 </${tag}>`;
 }
 
