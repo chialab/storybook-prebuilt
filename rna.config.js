@@ -38,9 +38,7 @@ const config = {
                 './src/addons/storybook-design-token/storybook-design-token.js',
                 './src/addons/storybook-design-token/storybook-design-token.register.js',
                 './src/frameworks/web-components/web-components.js',
-                './src/frameworks/web-components/web-components-preset.js',
                 './src/frameworks/dna/dna.js',
-                './src/frameworks/dna/dna-preset.js',
             ],
             alias: {
                 'fs': false,

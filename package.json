@@ -33,9 +33,7 @@
     "./storybook-design-token": "./dist/storybook-design-token.js",
     "./storybook-design-token/register": "./dist/storybook-design-token.register.js",
     "./web-components": "./dist/web-components.js",
-    "./web-components/preset.js": "./dist/web-components-preset.js",
     "./dna": "./dist/dna.js",
-    "./dna/preset.js": "./dist/dna-preset.js",
     ".": {
       "default": "./helpers/index.js"
     }
