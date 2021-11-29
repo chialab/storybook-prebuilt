@@ -5,7 +5,6 @@
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
-  "types": "./static/templates.d.ts",
   "exports": {
     "./addons": "./dist/addons.js",
     "./api": "./dist/api.js",
