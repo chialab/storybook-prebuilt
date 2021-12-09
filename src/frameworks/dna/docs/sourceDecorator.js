@@ -1,5 +1,7 @@
 import { window, customElements } from '@chialab/dna';
-import addons from '../../../../node_modules/@storybook/addons/dist/esm/public_api.js';
+import { SNIPPET_RENDERED } from '../../../../node_modules/@storybook/addon-docs/dist/esm/shared.js';
+import { addons, useEffect } from '../../../addons.js';
+import { STORY_PREPARED } from '../../../core-events.js';
 
 /**
  * @param {*} value
@@ -168,15 +170,19 @@ export function sourceDecorator(Story, context) {
     const vnode = /** @type {import('@chialab/dna').Template} */ (Story());
     const source = vnodeToString(vnode);
 
-    channel.emit('storybook/docs/snippet-rendered', context.id, source);
+    useEffect(() => {
+        channel.emit(SNIPPET_RENDERED, context.id, source);
+    });
 
     const storySource = context.parameters.storySource = context.parameters.storySource || {};
-    if (storySource.source === source) {
+    const currentSource = storySource.source;
+    storySource.source = source;
+
+    if (currentSource === source) {
         return vnode;
     }
 
-    storySource.source = source;
-    channel.emit('storyPrepared', {
+    channel.emit(STORY_PREPARED, {
         id: context.id,
         argTypes: context.argTypes,
         args: context.args,
