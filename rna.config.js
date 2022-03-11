@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 import { dirname, resolve } from 'path';
 
 process.env.NODE_ENV = 'production';
@@ -13,6 +15,9 @@ const config = {
         {
             input: [
                 './src/react.js',
+                './src/jsx-runtime.js',
+                './src/react-dom.js',
+                './src/react-is.js',
                 './src/mdx.js',
                 './src/channel-postmessage.js',
                 './src/core-events.js',
@@ -47,8 +52,9 @@ const config = {
                 'crypto': false,
                 'global': resolve(ROOT, './src/global.js'),
                 'react': resolve(ROOT, './src/react.js'),
-                'react-is': resolve(ROOT, './src/react.js'),
-                'react-dom': resolve(ROOT, './src/react.js'),
+                'react/jsx-runtime': resolve(ROOT, './src/jsx-runtime.js'),
+                'react-is': resolve(ROOT, './src/react-is.js'),
+                'react-dom': resolve(ROOT, './src/react-dom.js'),
                 'react-sizeme': resolve(ROOT, './src/react-sizeme.js'),
                 '@mdx-js/react': resolve(ROOT, './src/mdx.js'),
                 '@storybook/api': resolve(ROOT, './src/api.js'),

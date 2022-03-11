@@ -1,68 +1,10 @@
-import path from 'path';
-import { mkdir, readFile, writeFile } from 'fs/promises';
-import glob from 'fast-glob';
-
-/**
- * @param {string} root
- * @param {string|string[]} cssFiles
- */
-export async function createDesignTokens(root, cssFiles) {
-    const patterns = Array.isArray(cssFiles) ? cssFiles : [cssFiles];
-    const designTokensConfig = {
-        files: (await Promise.all(
-            patterns.map((pattern) =>
-                glob(pattern).then((files) =>
-                    Promise.all(
-                        files.map((async (filename) => ({
-                            filename: path.relative(root, filename),
-                            content: (await readFile(filename, 'utf-8'))
-                                .replace(/\\/g, '\\\\')
-                                .replace(/\n/g, '\\n'),
-                        })))
-                    )
-                )
-            )
-        )).flat(),
-        options: {
-            hideMatchingHardCodedValues: true,
-        },
-    };
-
-    return designTokensConfig;
-}
-
-/**
- * @param {string} root
- * @param {string[]} cssFiles
- */
-export async function createDesignTokensEntry(root, cssFiles) {
-    const designTokensConfig = await createDesignTokens(root, cssFiles);
-    const content = JSON.stringify(designTokensConfig)
-        .replace(/"/g, '\\"')
-        .replace(/'/g, '\\\'');
-
-    return `export const parameters = { designToken: JSON.parse('${content}'), };`;
-}
-
-/**
- * @param {string} root
- * @param {string[]} cssFiles
- */
-export async function createDesignTokensFile(root, cssFiles) {
-    const content = await createDesignTokensEntry(root, cssFiles);
-    const file = path.resolve(root, './node_modules/.cache/@chialab/storybook-prebuilt/design-tokens.js');
-    await mkdir(path.dirname(file), { recursive: true });
-    await writeFile(file, content);
-
-    return file;
-}
-
 export const managerEntries = ['@storybook/manager'];
 
 export const aliasMap = {
     'react': '@chialab/storybook-prebuilt/react',
-    'react-dom': '@chialab/storybook-prebuilt/react',
-    'react-is': '@chialab/storybook-prebuilt/react',
+    'react/jsx-runtime': '@chialab/storybook-prebuilt/react/jsx-runtime',
+    'react-dom': '@chialab/storybook-prebuilt/react-dom',
+    'react-is': '@chialab/storybook-prebuilt/react-is',
     '@mdx-js/react': '@chialab/storybook-prebuilt/mdx',
     '@storybook/manager': '@chialab/storybook-prebuilt/manager',
     '@storybook/web-components': '@chialab/storybook-prebuilt/web-components',

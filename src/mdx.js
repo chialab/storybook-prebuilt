@@ -1,1 +1,1 @@
-export { MDXProvider, mdx } from '../node_modules/@mdx-js/react/dist/esm.js';
+export { mdx, MDXContext, MDXProvider, useMDXComponents, withMDXComponents } from '../node_modules/@mdx-js/react/index.js';
