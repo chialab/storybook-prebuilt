@@ -54,9 +54,6 @@
     "dist",
     "helpers"
   ],
-  "dependencies": {
-    "fast-glob": "^3.2.7"
-  },
   "devDependencies": {
     "@chialab/dna": "^3.4.6",
     "@chialab/eslint-config": "^3.0.0",
