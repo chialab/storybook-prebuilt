@@ -1,7 +1,7 @@
 {
   "name": "@chialab/storybook-prebuilt",
   "type": "module",
-  "version": "6.5.0-alpha.51",
+  "version": "6.5.0-alpha.52",
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "./ui": "./dist/ui.js",
     "./manager": "./dist/manager.js",
     "./docs": "./dist/docs.js",
+    "./docs-tools": "./dist/docs-tools.js",
     "./essentials": "./dist/essentials.js",
     "./essentials/register": "./dist/essentials.register.js",
     "./storysource/register": "./dist/storysource.register.js",

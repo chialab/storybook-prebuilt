@@ -19,6 +19,7 @@ export const aliasMap = {
     '@storybook/client-api': '@chialab/storybook-prebuilt/client-api',
     '@storybook/client-logger': '@chialab/storybook-prebuilt/client-logger',
     '@storybook/core-events': '@chialab/storybook-prebuilt/core-events',
+    '@storybook/docs-tools': '@chialab/storybook-prebuilt/docs-tools',
     '@storybook/preview-web': '@chialab/storybook-prebuilt/preview-web',
     '@storybook/components': '@chialab/storybook-prebuilt/components',
     '@storybook/router': '@chialab/storybook-prebuilt/router',

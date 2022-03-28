@@ -1,5 +1,5 @@
 import { window, customElements } from '@chialab/dna';
-import { SNIPPET_RENDERED } from '../../../../node_modules/@storybook/addon-docs/dist/esm/shared.js';
+import { SNIPPET_RENDERED } from '../../../../node_modules/@storybook/docs-tools/dist/esm/index.js';
 import { addons, useEffect } from '../../../addons.js';
 import { STORY_PREPARED } from '../../../core-events.js';
 
