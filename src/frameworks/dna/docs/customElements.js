@@ -70,7 +70,19 @@ const getMetaDataV1 = (tagName, customElements) => {
 
 export const extractArgTypesFromElements = (tagName, customElements) => {
     const metaData = getMetaData(tagName, customElements);
-    return metaData && Object.assign({}, mapData(metaData.attributes, 'attributes'), mapData(metaData.members, 'properties'), mapData(metaData.properties, 'properties'), mapData(metaData.events, 'events'), mapData(metaData.slots, 'slots'), mapData(metaData.cssProperties, 'css custom properties'), mapData(metaData.cssParts, 'css shadow parts'));
+    return metaData && Object.assign(
+        {},
+        mapData(metaData.attributes, 'attributes'),
+        mapData(metaData.members.filter((m) => m.kind === 'field' && !m.static), 'properties'),
+        mapData(metaData.properties, 'properties'),
+        mapData(metaData.events, 'events'),
+        mapData(metaData.slots, 'slots'),
+        mapData(metaData.cssProperties, 'css custom properties'),
+        mapData(metaData.cssParts, 'css shadow parts'),
+        mapData(metaData.members.filter((m) => m.kind === 'method' && !m.static), 'methods'),
+        mapData(metaData.members.filter((m) => m.kind === 'field' && m.static), 'static properties'),
+        mapData(metaData.members.filter((m) => m.kind === 'method' && m.static), 'static methods')
+    );
 };
 
 const getMetaData = (tagName, manifest) => {
