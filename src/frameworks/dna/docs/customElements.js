@@ -5,7 +5,6 @@ function mapData(data, category) {
     return data && data.filter((item) => !!item).reduce((acc, item) => {
         let item$type, item$type2;
 
-        if (item.kind === 'method') return acc;
         const type = category === 'properties' ? {
             name: ((item$type = item.type) === null || item$type === void 0 ? void 0 : item$type.text) || item.type,
         } : {
