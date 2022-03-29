@@ -70,8 +70,35 @@ const getMetaDataV1 = (tagName, customElements) => {
 
 export const extractArgTypesFromElements = (tagName, customElements) => {
     const metaData = getMetaData(tagName, customElements);
-    return metaData && Object.assign(
-        {},
+    if (!metaData) {
+        return;
+    }
+
+    const result = {};
+    if (metaData.superclass) {
+        const mod = customElements.modules?.find((m) =>
+            m.declarations?.find((d) => d.kind === 'class' && d.name === metaData.superclass.name)
+        );
+        const decl = mod?.declarations?.find((d) => d.kind === 'class' && d.name === metaData.superclass.name);
+        if (decl?.tagName) {
+            const metaData = getMetaData(decl.tagName, customElements);
+            Object.assign(
+                result,
+                mapData(metaData.attributes, 'attributes'),
+                mapData(metaData.members.filter((m) => m.kind === 'field' && !m.static), 'properties'),
+                mapData(metaData.properties, 'properties'),
+                mapData(metaData.events, 'events'),
+                mapData(metaData.slots, 'slots'),
+                mapData(metaData.cssProperties, 'css custom properties'),
+                mapData(metaData.cssParts, 'css shadow parts'),
+                mapData(metaData.members.filter((m) => m.kind === 'method' && !m.static), 'methods'),
+                mapData(metaData.members.filter((m) => m.kind === 'field' && m.static), 'static properties'),
+                mapData(metaData.members.filter((m) => m.kind === 'method' && m.static), 'static methods')
+            );
+        }
+    }
+    Object.assign(
+        result,
         mapData(metaData.attributes, 'attributes'),
         mapData(metaData.members.filter((m) => m.kind === 'field' && !m.static), 'properties'),
         mapData(metaData.properties, 'properties'),
@@ -83,6 +110,8 @@ export const extractArgTypesFromElements = (tagName, customElements) => {
         mapData(metaData.members.filter((m) => m.kind === 'field' && m.static), 'static properties'),
         mapData(metaData.members.filter((m) => m.kind === 'method' && m.static), 'static methods')
     );
+
+    return result;
 };
 
 const getMetaData = (tagName, manifest) => {
