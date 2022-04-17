@@ -39,11 +39,12 @@ const config = {
                 './src/manager/manager.js',
                 './src/addons/docs/docs.js',
                 './src/addons/essentials/essentials.js',
-                './src/addons/essentials/essentials.register.js',
-                './src/addons/storysource/storysource.register.js',
+                './src/addons/essentials/essentials.manager.js',
+                './src/addons/storysource/storysource.manager.js',
                 './src/addons/storybook-design-token/storybook-design-token.js',
                 './src/addons/storybook-design-token/storybook-design-token.register.js',
                 './src/frameworks/web-components/web-components.js',
+                './src/frameworks/html/html.js',
                 './src/frameworks/dna/dna.js',
             ],
             alias: {
@@ -79,6 +80,7 @@ const config = {
                 '@storybook/addon-docs/blocks': resolve(ROOT, './src/addons/docs/docs.js'),
                 '@storybook/addon-docs': resolve(ROOT, './src/addons/docs/docs.js'),
                 '@storybook/web-components': resolve(ROOT, './src/frameworks/web-components/web-components.js'),
+                '@storybook/html': resolve(ROOT, './src/frameworks/html/html.js'),
             },
             external: [
                 'lit-html',

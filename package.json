@@ -31,11 +31,14 @@
     "./docs": "./dist/docs.js",
     "./docs-tools": "./dist/docs-tools.js",
     "./essentials": "./dist/essentials.js",
-    "./essentials/register": "./dist/essentials.register.js",
-    "./storysource/register": "./dist/storysource.register.js",
+    "./essentials/register": "./dist/essentials.manager.js",
+    "./essentials/manager": "./dist/essentials.manager.js",
+    "./storysource/register": "./dist/storysource.manager.js",
+    "./storysource/manager": "./dist/storysource.manager.js",
     "./storybook-design-token": "./dist/storybook-design-token.js",
     "./storybook-design-token/register": "./dist/storybook-design-token.register.js",
     "./web-components": "./dist/web-components.js",
+    "./html": "./dist/html.js",
     "./dna": "./dist/dna.js",
     ".": {
       "default": "./helpers/index.js"
