@@ -43,6 +43,7 @@ The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based o
     "@storybook/essentials": "@chialab/storybook-prebuilt/essentials",
     "@storybook/essentials/register": "@chialab/storybook-prebuilt/essentials/register",
     "@storybook/addon-links": "@chialab/storybook-prebuilt/addon-links",
+    "@storybook/addon-links/react": "@chialab/storybook-prebuilt/addon-links/react",
     "@storybook/addon-links/register": "@chialab/storybook-prebuilt/addon-links/register",
     "@storybook/addon-storysource": "@chialab/storybook-prebuilt/addon-storysource",
     "@storybook/addon-storysource/register": "@chialab/storybook-prebuilt/addon-storysource/register",

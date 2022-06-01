@@ -57,6 +57,7 @@
     "./links": "./dist/links.js",
     "./links/register": "./dist/links.manager.js",
     "./links/manager": "./dist/links.manager.js",
+    "./links/react": "./dist/links.react.js",
     "./storysource/register": "./dist/storysource.manager.js",
     "./storysource/manager": "./dist/storysource.manager.js",
     "./web-components": "./dist/web-components.js",

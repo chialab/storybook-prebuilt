@@ -51,6 +51,7 @@ export const aliasMap = {
     '@storybook/addon-essentials': '@chialab/storybook-prebuilt/essentials',
     '@storybook/addon-links/register': '@chialab/storybook-prebuilt/links/manager',
     '@storybook/addon-links/manager': '@chialab/storybook-prebuilt/links/manager',
+    '@storybook/addon-links/react': '@chialab/storybook-prebuilt/links/react',
     '@storybook/addon-links': '@chialab/storybook-prebuilt/links',
     '@storybook/addon-storysource/register': '@chialab/storybook-prebuilt/storysource/manager',
     '@storybook/addon-storysource/manager': '@chialab/storybook-prebuilt/storysource/manager',
