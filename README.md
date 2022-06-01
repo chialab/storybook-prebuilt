@@ -28,11 +28,21 @@ The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based o
     "@storybook/preview-web": "@chialab/storybook-prebuilt/preview-web",
     "@storybook/manager": "@chialab/storybook-prebuilt/manager",
     "@storybook/docs": "@chialab/storybook-prebuilt/docs",
+    "@storybook/a11y": "@chialab/storybook-prebuilt/a11y",
+    "@storybook/a11y/register": "@chialab/storybook-prebuilt/a11y/register",
+    "@storybook/actions": "@chialab/storybook-prebuilt/actions",
+    "@storybook/backgrounds": "@chialab/storybook-prebuilt/backgrounds",
+    "@storybook/backgrounds/register": "@chialab/storybook-prebuilt/backgrounds/register",
+    "@storybook/controls/register": "@chialab/storybook-prebuilt/controls/register",
+    "@storybook/measure": "@chialab/storybook-prebuilt/measure",
+    "@storybook/measure/register": "@chialab/storybook-prebuilt/measure/register",
+    "@storybook/outline": "@chialab/storybook-prebuilt/outline",
+    "@storybook/outline/register": "@chialab/storybook-prebuilt/outline/register",
+    "@storybook/toolbars/register": "@chialab/storybook-prebuilt/toolbars/register",
+    "@storybook/viewport/register": "@chialab/storybook-prebuilt/viewport/register",
     "@storybook/essentials": "@chialab/storybook-prebuilt/essentials",
     "@storybook/essentials/register": "@chialab/storybook-prebuilt/essentials/register",
-    "@storybook/web-components": "@chialab/storybook-prebuilt/web-components",
-    "storybook-design-token/register": "@chialab/storybook-prebuilt/storybook-design-token/register",
-    "storybook-design-token": "@chialab/storybook-prebuilt/storybook-design-token",
+    "@storybook/web-components": "@chialab/storybook-prebuilt/web-components"
 }
 ```
 
@@ -42,7 +52,6 @@ Since each entrypoint exposes the original module interface, third party addons 
 
 * Manager with Docs addon
 * Essentials addons
-* Design Token addon
 * Web Components framework
 * DNA framework
 
