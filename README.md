@@ -28,20 +28,24 @@ The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based o
     "@storybook/preview-web": "@chialab/storybook-prebuilt/preview-web",
     "@storybook/manager": "@chialab/storybook-prebuilt/manager",
     "@storybook/docs": "@chialab/storybook-prebuilt/docs",
-    "@storybook/a11y": "@chialab/storybook-prebuilt/a11y",
-    "@storybook/a11y/register": "@chialab/storybook-prebuilt/a11y/register",
-    "@storybook/actions": "@chialab/storybook-prebuilt/actions",
-    "@storybook/backgrounds": "@chialab/storybook-prebuilt/backgrounds",
-    "@storybook/backgrounds/register": "@chialab/storybook-prebuilt/backgrounds/register",
-    "@storybook/controls/register": "@chialab/storybook-prebuilt/controls/register",
-    "@storybook/measure": "@chialab/storybook-prebuilt/measure",
-    "@storybook/measure/register": "@chialab/storybook-prebuilt/measure/register",
-    "@storybook/outline": "@chialab/storybook-prebuilt/outline",
-    "@storybook/outline/register": "@chialab/storybook-prebuilt/outline/register",
-    "@storybook/toolbars/register": "@chialab/storybook-prebuilt/toolbars/register",
-    "@storybook/viewport/register": "@chialab/storybook-prebuilt/viewport/register",
+    "@storybook/addon-a11y": "@chialab/storybook-prebuilt/a11y",
+    "@storybook/addon-a11y/register": "@chialab/storybook-prebuilt/a11y/register",
+    "@storybook/addon-actions": "@chialab/storybook-prebuilt/actions",
+    "@storybook/addon-backgrounds": "@chialab/storybook-prebuilt/backgrounds",
+    "@storybook/addon-backgrounds/register": "@chialab/storybook-prebuilt/backgrounds/register",
+    "@storybook/addon-controls/register": "@chialab/storybook-prebuilt/controls/register",
+    "@storybook/addon-measure": "@chialab/storybook-prebuilt/measure",
+    "@storybook/addon-measure/register": "@chialab/storybook-prebuilt/measure/register",
+    "@storybook/addon-outline": "@chialab/storybook-prebuilt/outline",
+    "@storybook/addon-outline/register": "@chialab/storybook-prebuilt/outline/register",
+    "@storybook/addon-toolbars/register": "@chialab/storybook-prebuilt/toolbars/register",
+    "@storybook/addon-viewport/register": "@chialab/storybook-prebuilt/viewport/register",
     "@storybook/essentials": "@chialab/storybook-prebuilt/essentials",
     "@storybook/essentials/register": "@chialab/storybook-prebuilt/essentials/register",
+    "@storybook/addon-links": "@chialab/storybook-prebuilt/addon-links",
+    "@storybook/addon-links/register": "@chialab/storybook-prebuilt/addon-links/register",
+    "@storybook/addon-storysource": "@chialab/storybook-prebuilt/addon-storysource",
+    "@storybook/addon-storysource/register": "@chialab/storybook-prebuilt/addon-storysource/register",
     "@storybook/web-components": "@chialab/storybook-prebuilt/web-components"
 }
 ```
@@ -52,6 +56,9 @@ Since each entrypoint exposes the original module interface, third party addons 
 
 * Manager with Docs addon
 * Essentials addons
+* Storysource addons
+* Links addons
+* Html framework
 * Web Components framework
 * DNA framework
 
