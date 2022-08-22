@@ -1,1 +1,1 @@
-import '../../node_modules/@storybook/addon-backgrounds/dist/esm/manager.js';
+import '../../node_modules/@storybook/addon-backgrounds/dist/manager.mjs';

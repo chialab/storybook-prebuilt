@@ -1,7 +1,7 @@
 import { window, customElements } from '@chialab/dna';
-import { SNIPPET_RENDERED } from '../../../node_modules/@storybook/docs-tools/dist/esm/index.js';
-import { addons, useEffect } from '../../addons/index.js';
-import { STORY_PREPARED } from '../../core-events/index.js';
+import { SNIPPET_RENDERED } from '@storybook/docs-tools';
+import { addons, useEffect } from '@storybook/addons';
+import { STORY_PREPARED } from '@storybook/core-events';
 
 /**
  * @param {*} value

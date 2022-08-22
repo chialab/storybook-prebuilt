@@ -1,5 +1,4 @@
-import { getCustomElements, isValidComponent, isValidMetaData } from '../../../node_modules/@storybook/web-components/dist/esm/client/customElements.js';
-import { logger } from '../../client-logger/index.js';
+import { getCustomElements, getMetaData } from '../framework-api.js';
 
 function mapData(data, category) {
     return data && data.filter((item) => !!item).reduce((acc, item) => {
@@ -10,7 +9,7 @@ function mapData(data, category) {
         } : {
             name: 'void',
         };
-        acc[item.name] = {
+        acc[`${category} - ${item.name}`] = {
             name: item.name,
             required: false,
             description: item.description,
@@ -28,45 +27,6 @@ function mapData(data, category) {
         return acc;
     }, {});
 }
-
-const getMetaDataExperimental = (tagName, customElements) => {
-    if (!isValidComponent(tagName) || !isValidMetaData(customElements)) {
-        return null;
-    }
-
-    const metaData = customElements.tags.find(tag => tag.name.toUpperCase() === tagName.toUpperCase());
-
-    if (!metaData) {
-        logger.warn(`Component not found in custom-elements.json: ${tagName}`);
-    }
-
-    return metaData;
-};
-
-const getMetaDataV1 = (tagName, customElements) => {
-    let _customElements$modul;
-
-    if (!isValidComponent(tagName) || !isValidMetaData(customElements)) {
-        return null;
-    }
-
-    let metadata;
-    customElements === null || customElements === void 0 ? void 0 : (_customElements$modul = customElements.modules) === null || _customElements$modul === void 0 ? void 0 : _customElements$modul.forEach(_module => {
-        let _module$declarations;
-
-        _module === null || _module === void 0 ? void 0 : (_module$declarations = _module.declarations) === null || _module$declarations === void 0 ? void 0 : _module$declarations.forEach(declaration => {
-            if (declaration.tagName === tagName) {
-                metadata = declaration;
-            }
-        });
-    });
-
-    if (!metadata) {
-        logger.warn(`Component not found in custom-elements.json: ${tagName}`);
-    }
-
-    return metadata;
-};
 
 export const extractArgTypesFromElements = (tagName, customElements) => {
     const metaData = getMetaData(tagName, customElements);
@@ -112,14 +72,6 @@ export const extractArgTypesFromElements = (tagName, customElements) => {
     );
 
     return result;
-};
-
-const getMetaData = (tagName, manifest) => {
-    if (manifest.version === 'experimental') {
-        return getMetaDataExperimental(tagName, manifest);
-    }
-
-    return getMetaDataV1(tagName, manifest);
 };
 
 export const extractArgTypes = (tagName) => {

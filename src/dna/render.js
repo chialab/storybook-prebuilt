@@ -1,5 +1,5 @@
 import { Node, html, customElements, DOM, render } from '@chialab/dna';
-import { simulatePageLoad, simulateDOMContentLoaded } from '../../../node_modules/@storybook/preview-web/dist/esm/index.js';
+import { simulatePageLoad, simulateDOMContentLoaded } from '@storybook/preview-web';
 
 export function renderToDOM({
     storyFn,
