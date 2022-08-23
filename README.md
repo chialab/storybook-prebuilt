@@ -26,7 +26,6 @@ The setup is based on [RNA](https://github.com/chialab/rna), a toolchain based o
     "@storybook/theming": "@chialab/storybook-prebuilt/theming",
     "@storybook/ui": "@chialab/storybook-prebuilt/ui",
     "@storybook/preview-web": "@chialab/storybook-prebuilt/preview-web",
-    "@storybook/manager": "@chialab/storybook-prebuilt/manager",
     "@storybook/docs": "@chialab/storybook-prebuilt/docs",
     "@storybook/addon-a11y": "@chialab/storybook-prebuilt/addon-a11y",
     "@storybook/addon-a11y/preview": "@chialab/storybook-prebuilt/addon-a11y/preview",

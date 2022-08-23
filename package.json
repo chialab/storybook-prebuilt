@@ -6,6 +6,7 @@
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
   "exports": {
+    "./global": "./dist/global/index.js",
     "./addons": "./dist/addons/index.js",
     "./api": "./dist/api/index.js",
     "./channels": "./dist/channels/index.js",
@@ -26,8 +27,8 @@
     "./semver": "./dist/semver/index.js",
     "./store": "./dist/store/index.js",
     "./theming": "./dist/theming/index.js",
+    "./ui/runtime": "./dist/ui/runtime.js",
     "./ui": "./dist/ui/index.js",
-    "./manager": "./dist/manager/index.js",
     "./docs-tools": "./dist/docs-tools/index.js",
     "./addon-docs/preview": "./dist/addon-docs/preview.js",
     "./addon-docs": "./dist/addon-docs/index.js",

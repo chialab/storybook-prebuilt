@@ -1,12 +1,12 @@
 export const managerEntries = ['@storybook/manager'];
 
 export const aliasMap = {
+    'global': '@chialab/storybook-prebuilt/global',
     'react': '@chialab/storybook-prebuilt/react',
     'react/jsx-runtime': '@chialab/storybook-prebuilt/react/jsx-runtime',
     'react-dom': '@chialab/storybook-prebuilt/react-dom',
     'react-is': '@chialab/storybook-prebuilt/react-is',
     '@mdx-js/react': '@chialab/storybook-prebuilt/mdx',
-    '@storybook/manager': '@chialab/storybook-prebuilt/manager',
     '@storybook/web-components': '@chialab/storybook-prebuilt/web-components',
     '@storybook/html': '@chialab/storybook-prebuilt/html',
     '@storybook/dna/preview': '@chialab/storybook-prebuilt/dna/preview',
@@ -26,6 +26,7 @@ export const aliasMap = {
     '@storybook/semver': '@chialab/storybook-prebuilt/semver',
     '@storybook/store': '@chialab/storybook-prebuilt/store',
     '@storybook/theming': '@chialab/storybook-prebuilt/theming',
+    '@storybook/ui/dist/runtime': '@chialab/storybook-prebuilt/ui/runtime',
     '@storybook/ui': '@chialab/storybook-prebuilt/ui',
     '@storybook/addon-docs': '@chialab/storybook-prebuilt/addon-docs',
     '@storybook/addon-docs/preview': '@chialab/storybook-prebuilt/addon-docs/preview',
