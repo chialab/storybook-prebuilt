@@ -1,4 +1,4 @@
-import Channel from '../../node_modules/@storybook/channels/dist/esm/index.js';
+import Channel from '../../node_modules/@storybook/channels/dist/index.mjs';
 
-export * from '../../node_modules/@storybook/channels/dist/esm/index.js';
+export * from '../../node_modules/@storybook/channels/dist/index.mjs';
 export default Channel;

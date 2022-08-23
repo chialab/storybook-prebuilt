@@ -1,10 +1,12 @@
-import { withActions as actionsDecorator } from '../addon-actions/index.js';
-import { parameters as backgroundParameters, decorators as backgroundDecorators } from '../addon-backgrounds/index.js';
-import { decorators as measureDecorators } from '../addon-measure/index.js';
-import { decorators as outlineDecorators } from '../addon-outline/index.js';
-import '../addon-a11y/index.js';
+import { parameters as docsParameters } from '../addon-docs/preview.js';
+import { withActions as actionsDecorator } from '../addon-actions/preview.js';
+import { parameters as backgroundParameters, decorators as backgroundDecorators } from '../addon-backgrounds/preview.js';
+import { decorators as measureDecorators } from '../addon-measure/preview.js';
+import { decorators as outlineDecorators } from '../addon-outline/preview.js';
+import '../addon-a11y/preview.js';
 
 export const parameters = {
+    ...docsParameters,
     ...backgroundParameters,
 };
 

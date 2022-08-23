@@ -1,4 +1,4 @@
-import Events from '../../node_modules/@storybook/core-events/dist/esm/index.js';
+import events from '../../node_modules/@storybook/core-events/dist/index.mjs';
 
-export * from '../../node_modules/@storybook/core-events/dist/esm/index.js';
-export default Events;
+export * from '../../node_modules/@storybook/core-events/dist/index.mjs';
+export default events;

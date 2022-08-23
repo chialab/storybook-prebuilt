@@ -1,15 +1,12 @@
-import { window } from '@chialab/dna';
-import { start } from '../../../node_modules/@storybook/core-client/dist/esm/index.js';
+import { start } from '@storybook/core-client';
 import { renderToDOM } from './render.js';
 
-const framework = window.STORYBOOK_ENV = 'dna';
+const FRAMEWORK = 'dna';
+
 const api = start(renderToDOM);
 
-export const storiesOf = (kind, m) => api.clientApi.storiesOf(kind, m).addParameters({
-    framework,
-});
-
-export const configure = (...args) => api.configure(framework, ...args);
+export const storiesOf = (kind, m) => api.clientApi.storiesOf(kind, m).addParameters({ framework: FRAMEWORK });
+export const configure = (...args) => api.configure(FRAMEWORK, ...args);
 export const addDecorator = api.clientApi.addDecorator;
 export const addParameters = api.clientApi.addParameters;
 export const clearDecorators = api.clientApi.clearDecorators;
