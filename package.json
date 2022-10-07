@@ -1,7 +1,7 @@
 {
   "name": "@chialab/storybook-prebuilt",
   "type": "module",
-  "version": "7.0.0-alpha.23",
+  "version": "7.0.0-alpha.35",
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
