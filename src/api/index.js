@@ -1,1 +1,1 @@
-export * from '../../node_modules/@storybook/api/dist/esm/index.js';
+export * from '../../node_modules/@storybook/api/dist/index.mjs';

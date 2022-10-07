@@ -1,5 +1,5 @@
 import { parameters as docsParameters } from '../addon-docs/preview.js';
-import { withActions as actionsDecorator } from '../addon-actions/preview.js';
+import { decorators as actionsDecorators } from '../addon-actions/preview.js';
 import { parameters as backgroundParameters, decorators as backgroundDecorators } from '../addon-backgrounds/preview.js';
 import { decorators as measureDecorators } from '../addon-measure/preview.js';
 import { decorators as outlineDecorators } from '../addon-outline/preview.js';
@@ -11,7 +11,7 @@ export const parameters = {
 };
 
 export const decorators = [
-    actionsDecorator,
+    ...actionsDecorators,
     ...backgroundDecorators,
     ...measureDecorators,
     ...outlineDecorators,
