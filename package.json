@@ -1,7 +1,7 @@
 {
   "name": "@chialab/storybook-prebuilt",
   "type": "module",
-  "version": "7.0.0-alpha.35",
+  "version": "7.0.0-alpha.38",
   "description": "A prebuilt storybook manager with optimised chunks.",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "license": "MIT",
@@ -24,7 +24,6 @@
     "./react-dom": "./dist/react-dom/index.js",
     "./react-is": "./dist/react-is/index.js",
     "./router": "./dist/router/index.js",
-    "./semver": "./dist/semver/index.js",
     "./store": "./dist/store/index.js",
     "./theming": "./dist/theming/index.js",
     "./ui/runtime": "./dist/ui/runtime.js",

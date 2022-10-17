@@ -86,7 +86,7 @@ function vnodeToString(vnode) {
         return vnode.toString();
     }
     if (Array.isArray(vnode)) {
-        return vnode.map(vnodeToString).join('');
+        return vnode.map(vnodeToString);
     }
     if (vnode instanceof window.Element) {
         return vnode.outerHTML;
@@ -103,8 +103,12 @@ function vnodeToString(vnode) {
         (is && customElements.tagNames[is]) ||
         (hyperObject.type instanceof window.Node && hyperObject.type.tagName) ||
         undefined;
-    const properties = hyperObject.properties || {};
-    const attrs = Object.keys({ is, ...properties }).map((prop) => {
+    let properties = hyperObject.properties || {};
+    if (is && tag && is.toLowerCase() !== tag.toLowerCase()) {
+        properties = { is, ...properties };
+    }
+
+    const attrs = Object.keys(properties).map((prop) => {
         if (prop === 'is' && is) {
             return `is="${is}"`;
         }
@@ -141,11 +145,17 @@ function vnodeToString(vnode) {
         return `<${tag}${attrs ? ` ${attrs}` : ''}></${tag}>`;
     }
 
+    let hasNodes = false;
     const prefix = ''.padStart(4, ' ');
-    const childContent = (hyperObject.children || [])
+    const childContents = (hyperObject.children || [])
         .reduce((acc, child) => {
-            if (typeof child !== 'object' || child instanceof window.Node) {
+            if (typeof child !== 'object') {
                 child = vnodeToString(child);
+            } else if (child instanceof window.Node) {
+                hasNodes = true;
+                child = vnodeToString(child);
+            } else {
+                hasNodes = true;
             }
 
             if (typeof child === 'string' &&
@@ -160,11 +170,16 @@ function vnodeToString(vnode) {
         .map((child) =>
             vnodeToString(child)
                 .replace(/\n/g, `\n${prefix}`)
-        )
-        .join(`\n${prefix}`);
-    return `<${tag}${attrs ? ` ${attrs}` : ''}>
-${prefix}${childContent}
-</${tag}>`;
+        );
+
+    let childContentsHtml = '';
+    if (childContents.length === 1 && !hasNodes) {
+        childContentsHtml = childContents[0];
+    } else if (childContents.length) {
+        childContentsHtml = `\n${prefix}${childContents.join(`\n${prefix}`)}\n`;
+    }
+
+    return `<${tag}${attrs ? ` ${attrs}` : ''}>${childContentsHtml}</${tag}>`;
 }
 
 /**
@@ -174,7 +189,7 @@ ${prefix}${childContent}
 export function sourceDecorator(Story, context) {
     const channel = addons.getChannel();
     const vnode = /** @type {import('@chialab/dna').Template} */ (Story());
-    const source = vnodeToString(vnode);
+    const source = vnodeToString(Array.isArray(vnode) ? vnode : [vnode]).join('\n');
 
     useEffect(() => {
         channel.emit(SNIPPET_RENDERED, context.id, source);

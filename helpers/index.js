@@ -23,7 +23,6 @@ export const aliasMap = {
     '@storybook/preview-web': '@chialab/storybook-prebuilt/preview-web',
     '@storybook/components': '@chialab/storybook-prebuilt/components',
     '@storybook/router': '@chialab/storybook-prebuilt/router',
-    '@storybook/semver': '@chialab/storybook-prebuilt/semver',
     '@storybook/store': '@chialab/storybook-prebuilt/store',
     '@storybook/theming': '@chialab/storybook-prebuilt/theming',
     '@storybook/ui/dist/runtime': '@chialab/storybook-prebuilt/ui/runtime',
