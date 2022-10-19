@@ -86,7 +86,7 @@ function vnodeToString(vnode) {
         return vnode.toString();
     }
     if (Array.isArray(vnode)) {
-        return vnode.map(vnodeToString);
+        return vnode.map(vnodeToString).join('\n');
     }
     if (vnode instanceof window.Element) {
         return vnode.outerHTML;
@@ -136,7 +136,6 @@ function vnodeToString(vnode) {
         return `${prop}="${escapeHtml(`${value}`)}"`;
     }).filter(Boolean).join(' ');
 
-
     if (voidElements.indexOf(tag) !== -1) {
         return `<${tag}${attrs ? ` ${attrs}` : ''} />`;
     }
@@ -168,8 +167,7 @@ function vnodeToString(vnode) {
             return acc;
         }, [])
         .map((child) =>
-            vnodeToString(child)
-                .replace(/\n/g, `\n${prefix}`)
+            vnodeToString(child).replace(/\n/g, `\n${prefix}`)
         );
 
     let childContentsHtml = '';
@@ -189,7 +187,13 @@ function vnodeToString(vnode) {
 export function sourceDecorator(Story, context) {
     const channel = addons.getChannel();
     const vnode = /** @type {import('@chialab/dna').Template} */ (Story());
-    const source = vnodeToString(Array.isArray(vnode) ? vnode : [vnode]).join('\n');
+    const source = (() => {
+        try {
+            return vnodeToString(vnode);
+        } catch {
+            return '';
+        }
+    })();
 
     useEffect(() => {
         channel.emit(SNIPPET_RENDERED, context.id, source);

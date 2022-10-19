@@ -1,1 +1,1 @@
-import '../../node_modules/@storybook/addon-storysource/dist/esm/manager.js';
+import '../../node_modules/@storybook/addon-storysource/dist/manager.mjs';
