@@ -96,6 +96,7 @@ function vnodeToString(vnode) {
     }
 
     const hyperObject = /** @type {import('@chialab/dna').VObject} */ (vnode);
+
     const is = (typeof hyperObject.type === 'function' && hyperObject.type.prototype.is) ||
         (hyperObject.type instanceof window.Node && hyperObject.type.is) ||
         undefined;
@@ -135,6 +136,10 @@ function vnodeToString(vnode) {
 
         return `${prop}="${escapeHtml(`${value}`)}"`;
     }).filter(Boolean).join(' ');
+
+    if (typeof hyperObject.type === 'function' && !is) {
+        return `<${hyperObject.type.name}${attrs ? ` ${attrs}` : ''} />`;
+    }
 
     if (voidElements.indexOf(tag) !== -1) {
         return `<${tag}${attrs ? ` ${attrs}` : ''} />`;
